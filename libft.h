@@ -6,13 +6,12 @@
 /*   By: evgutier <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/12 14:44:22 by evgutier          #+#    #+#             */
-/*   Updated: 2024/03/12 14:57:39 by evgutier         ###   ########.fr       */
+/*   Updated: 2024/03/21 20:04:21 by evgutier         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef LIBFT_H
-#define LIBFT_H
 int	ft_isalpha(int c);
 int	ft_isdigit(int c);
 int	ft_isalnum(int c);
-#endif
+int	ft_isascii(int c);
+int	ft_isprint(int c);

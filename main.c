@@ -33,5 +33,14 @@ int	main(void)
 		printf("lib: %c, %d\n", cadena[i], isalnum(cadena[i]));
 		i++;
 	}
+
+	printf("\nisascii: \n");
+	i = 0;
+	while (i < 10)
+	{
+		printf("ft_: %c, %d\n", cadena[i], ft_isascii(cadena[i]));
+		printf("lib: %c, %d\n", cadena[i], isascii(cadena[i]));
+		i++;
+	}
 	return (1);
 }
