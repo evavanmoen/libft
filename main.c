@@ -10,6 +10,12 @@ int	main(void)
 	char	cadena1 = '\0';
 	char	cadena2a_set[] = "almost every programmer should know memset!";
 	char	cadena2b_set[] = "almost every programmer should know memset!";
+	char	source3a[] = "Hello, world!";
+	char	buffer3a[20];
+	char	source3b[] = "Hello, world!";
+	char	buffer3b[20];
+	char	str1a[] = "memmove can be very useful......";
+	char	str1b[] = "memmove can be very useful......";
 	int i;
 
 	printf("isalpha: \n");
@@ -68,9 +74,16 @@ int	main(void)
 	printf("\nbzero: \n");
 	ft_bzero(cadena2a_set, 4);
 	printf("ft_: %s\n", cadena2a_set);
-
 	bzero(cadena2b_set, 4);
 	printf("lib: %s\n", cadena2b_set);
+
+	printf("\nmemcpy: \n");
+	printf("ft_: %s, %p\n", buffer3a, ft_memcpy(buffer3a, source3a, 6));
+	printf("lib: %s, %p\n", buffer3b, memcpy(buffer3b, source3b, 6));
+
+	printf("\nmemmove: \n");
+	printf("ft_: %s, %p\n", str1a, ft_memmove(str1a+20, str1a+15, 11));
+	printf("lib: %s, %p\n", str1b, memmove(str1b+20, str1b+15, 11));
 
 	return (1);
 }
