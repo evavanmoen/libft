@@ -67,10 +67,18 @@ int	main(void)
 	printf("ft_: %c, %d\n", cadena1, ft_isprint(cadena1));
 	printf("lib: %c, %d\n", cadena1, isprint(cadena1));
 
+	printf("\nstrlen: \n");
+	printf("ft_: %s, %zu\n", cadena, ft_strlen(cadena));
+	printf("lib: %s, %lu\n", cadena, strlen(cadena));
+
 	printf("\nmemset: \n");
 	printf("ft_: %s, %p\n", cadena2a_set, ft_memset(cadena2a_set, '-', 6));
 	printf("lib: %s, %p\n", cadena2b_set, memset(cadena2b_set, '-', 6));	
 	
+	printf("\nmemset 2: \n");
+	printf("ft_: %s, %p\n", " ", ft_memset(((void *)0), 'a', 12));
+	printf("lib: %s, %p\n", " ", memset(((void *)0), 'a', 12));
+
 	printf("\nbzero: \n");
 	ft_bzero(cadena2a_set, 4);
 	printf("ft_: %s\n", cadena2a_set);

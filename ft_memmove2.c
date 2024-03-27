@@ -2,34 +2,23 @@
 
 void	*cpy(char *dest, const char *src, size_t n)
 {
+	size_t	len;
 	size_t	i;
 
-	i = 0;
-	if (dest == src || n == 0)
-		return (dest);
-
-	if (dest > src && src - dest < (int) n)
+	len = ft_strlen(src);
+	i = len;
+	if (len < ft_strlen(dest))
 	{
-		i = n - 1;
-		while (i >= 0)
-		{
-			dest[i] = src[i];
-			i--;
-		}
-		return (dest);
+		dest += n - 1;
+		src += n - 1;
+		while (n--)
+			*dest-- = *src--;
+	}
+	else
+	{
+		ft_memcpy(dest, src, n);
 	}
 
-	if (src > dest && src - dest < (int) n)
-	{
-		while (i < n)
-		{
-			dest[i] = src[i];
-			i++;
-		}
-		return (dest);
-	}	
-
-	ft_memcpy(dest, src, n);
 	return (dest);
 		
 }
