@@ -6,22 +6,23 @@
 
 int	main(void)
 {
-	char	cadena[] = ";0sR(h&R1/";
-	char	cadena1 = '\0';
-	char	cadena2a_set[] = "almost every programmer should know memset!";
-	char	cadena2b_set[] = "almost every programmer should know memset!";
-	char	source3a[] = "Hello, world!";
-	char	buffer3a[20];
-	char	source3b[] = "Hello, world!";
-	char	buffer3b[20];
-	char	str1a[] = "memmove can be very useful......";
-	char	str1b[] = "memmove can be very useful......";
-	char	strlcpy1a[20] = "Hello";
-    char	strlcpy1b[20];
-	char	strlcpy1c[20];
-	char	dst1a[5];
-	char	dst1b[5];
-	int		ch;
+	char		cadena[] = ";0sR(h&R1/";
+	char		cadena1 = '\0';
+	char		cadena2a_set[] = "almost every programmer should know memset!";
+	char		cadena2b_set[] = "almost every programmer should know memset!";
+	char		source3a[] = "Hello, world!";
+	char		buffer3a[20];
+	char		source3b[] = "Hello, world!";
+	char		buffer3b[20];
+	char		str1a[] = "memmove can be very useful......";
+	char		str1b[] = "memmove can be very useful......";
+	char		strlcpy1a[20] = "Hello";
+    char		strlcpy1b[20];
+	char		strlcpy1c[20];
+	char		dst1a[5];
+	char		dst1b[5];
+	const char	str[] = "This is just a String";
+	int			ch = 'u';
 	int i;
 
 	printf("isalpha: \n");
@@ -109,11 +110,17 @@ int	main(void)
 	printf("lib: %s, %zu\n", dst1b, strlcat(dst1b, "123", 0));
 
 	printf("\ntoupper: \n");
-	for (ch = 0x5d; ch <= 0x7a; ch++)
+	for (ch = 0x41; ch <= 0x7a; ch++)
 	{
-		printf("ft_: %#04x\n", ft_toupper(ch));
-		printf("lib: %#04x\n", toupper(ch));
+		printf("ft_upp: %#04x\n", ft_toupper(ch));
+		printf("ft_low: %#04x\n", ft_tolower(ch));
+		printf("lib_upp: %#04x\n", toupper(ch));
+		printf("lib_low: %#04x\n", tolower(ch));
 	}
+
+	printf("\nstrchr: \n");
+	printf("ft_: %s, %s\n", str, ft_strchr(str, 'u'));
+	printf("lib: %s, %s\n", str, strchr(str, 'u'));	
 
 	return (1);
 }
