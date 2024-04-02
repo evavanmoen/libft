@@ -21,6 +21,7 @@ int	main(void)
 	char	strlcpy1c[20];
 	char	dst1a[5];
 	char	dst1b[5];
+	int		ch;
 	int i;
 
 	printf("isalpha: \n");
@@ -106,5 +107,13 @@ int	main(void)
 	printf("\nstrlcat: \n");
 	printf("ft_: %s, %zu\n", dst1a, ft_strlcat(dst1a, "123", 0));
 	printf("lib: %s, %zu\n", dst1b, strlcat(dst1b, "123", 0));
+
+	printf("\ntoupper: \n");
+	for (ch = 0x5d; ch <= 0x7a; ch++)
+	{
+		printf("ft_: %#04x\n", ft_toupper(ch));
+		printf("lib: %#04x\n", toupper(ch));
+	}
+
 	return (1);
 }
