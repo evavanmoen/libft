@@ -16,6 +16,9 @@ int	main(void)
 	char	buffer3b[20];
 	char	str1a[] = "memmove can be very useful......";
 	char	str1b[] = "memmove can be very useful......";
+	char	strlcpy1a[20] = "Hello";
+    char	strlcpy1b[20];
+	char	strlcpy1c[20];
 	int i;
 
 	printf("isalpha: \n");
@@ -75,10 +78,11 @@ int	main(void)
 	printf("ft_: %s, %p\n", cadena2a_set, ft_memset(cadena2a_set, '-', 6));
 	printf("lib: %s, %p\n", cadena2b_set, memset(cadena2b_set, '-', 6));	
 	
-	printf("\nmemset 2: \n");
+	printf("\nmemset 2 (segmentation fault): \n");
+	/*
 	printf("ft_: %s, %p\n", " ", ft_memset(((void *)0), 'a', 12));
 	printf("lib: %s, %p\n", " ", memset(((void *)0), 'a', 12));
-
+	*/
 	printf("\nbzero: \n");
 	ft_bzero(cadena2a_set, 4);
 	printf("ft_: %s\n", cadena2a_set);
@@ -92,6 +96,10 @@ int	main(void)
 	printf("\nmemmove: \n");
 	printf("ft_: %s, %p\n", str1a, ft_memmove(str1a+20, str1a+15, 11));
 	printf("lib: %s, %p\n", str1b, memmove(str1b+20, str1b+15, 11));
+
+	printf("\nstrlcpy: \n");
+	printf("ft_: %s, %zu\n", strlcpy1b, ft_strlcpy(strlcpy1b, strlcpy1a, 11));
+	printf("lib: %s, %lu\n", strlcpy1c, strlcpy(strlcpy1c, strlcpy1a, 11));
 
 	return (1);
 }
