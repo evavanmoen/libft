@@ -19,6 +19,8 @@ int	main(void)
 	char	strlcpy1a[20] = "Hello";
     char	strlcpy1b[20];
 	char	strlcpy1c[20];
+	char	dst1a[5];
+	char	dst1b[5];
 	int i;
 
 	printf("isalpha: \n");
@@ -101,5 +103,8 @@ int	main(void)
 	printf("ft_: %s, %zu\n", strlcpy1b, ft_strlcpy(strlcpy1b, strlcpy1a, 11));
 	printf("lib: %s, %lu\n", strlcpy1c, strlcpy(strlcpy1c, strlcpy1a, 11));
 
+	printf("\nstrlcat: \n");
+	printf("ft_: %s, %zu\n", dst1a, ft_strlcat(dst1a, "123", 0));
+	printf("lib: %s, %zu\n", dst1b, strlcat(dst1b, "123", 0));
 	return (1);
 }
