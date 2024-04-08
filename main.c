@@ -22,8 +22,9 @@ int	main(void)
 	char		dst1a[5];
 	char		dst1b[5];
 	const char	str[] = "This is just a String";
-	int			ch = 'u';
-	int i;
+	const char	str1[] = "This world is not fot me";
+	int			i;
+	char		ch = 'u';
 
 	printf("isalpha: \n");
 	i = 0;
@@ -121,6 +122,10 @@ int	main(void)
 	printf("\nstrchr: \n");
 	printf("ft_: %s, %s\n", str, ft_strchr(str, 'u'));
 	printf("lib: %s, %s\n", str, strchr(str, 'u'));	
+
+	printf("\nstrrchr: \n");
+	printf("ft_: %s, %s\n", str1, ft_strrchr(str1, 't'));
+	printf("lib: %s, %s\n", str1, strrchr(str1, 't'));
 
 	return (1);
 }
