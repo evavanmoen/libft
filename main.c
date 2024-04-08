@@ -23,8 +23,13 @@ int	main(void)
 	char		dst1b[5];
 	const char	str[] = "This is just a String";
 	const char	str1[] = "This world is not fot me";
+	const char	str2[] = "https://www.tutorialspoint.com";
+	const char 	ch2 = '.';
 	int			i;
 	char		ch = 'u';
+	char		strcmp1[15];
+	char		strcmp2[15];
+	int			ret;
 
 	printf("isalpha: \n");
 	i = 0;
@@ -126,6 +131,31 @@ int	main(void)
 	printf("\nstrrchr: \n");
 	printf("ft_: %s, %s\n", str1, ft_strrchr(str1, 't'));
 	printf("lib: %s, %s\n", str1, strrchr(str1, 't'));
+
+	printf("\nmemchr: \n");
+	printf("String after |%c| is - |%s|\n", ch2, ft_memchr(str2, ch2, strlen(str2)));
+	printf("String after |%c| is - |%s|\n", ch2, memchr(str2, ch2, strlen(str2)));
+
+	printf("\nmemcmp: \n");
+	ft_memcpy(strcmp1, "abcdef", 6);
+	ft_memcpy(strcmp2, "ABCDEF", 6);
+	ret = ft_memcmp(strcmp1, strcmp2, 0);
+	if (ret > 0)
+		printf("str2 is less than str1\n");
+	else if(ret < 0)
+		printf("str1 is less than str2\n");
+	else
+		printf("str1 is equal to str2\n");
+
+	memcpy(strcmp1, "abcdef", 6);
+	memcpy(strcmp2, "ABCDEF", 6);
+	ret = memcmp(strcmp1, strcmp2, 0);
+	if (ret > 0)
+		printf("str2 is less than str1\n");
+	else if(ret < 0)
+		printf("str1 is less than str2\n");
+	else
+		printf("str1 is equal to str2\n");
 
 	return (1);
 }
