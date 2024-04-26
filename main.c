@@ -2,6 +2,7 @@
 #include <ctype.h>
 #include <string.h>
 #include <strings.h>
+#include <stdlib.h>
 #include "libft.h"
 
 int	main(void)
@@ -29,7 +30,13 @@ int	main(void)
 	char		ch = 'u';
 	char		strcmp1[15];
 	char		strcmp2[15];
-	int			ret;
+	int		ret;
+	const char	*largestring1 = "Foo Bar Baz";
+	const char	*largestring = "Foo Bar Baz";
+	const char	*smallstring = "Bar";
+	const char	*smallstring1 = "Bar";
+	char		*ptr;
+	char		*ptr1;
 
 	printf("isalpha: \n");
 	i = 0;
@@ -89,10 +96,10 @@ int	main(void)
 	printf("lib: %s, %p\n", cadena2b_set, memset(cadena2b_set, '-', 6));	
 	
 	printf("\nmemset 2 (segmentation fault): \n");
-	/*
-	printf("ft_: %s, %p\n", " ", ft_memset(((void *)0), 'a', 12));
-	printf("lib: %s, %p\n", " ", memset(((void *)0), 'a', 12));
-	*/
+	
+	//printf("ft_: %s, %p\n", " ", ft_memset(((void *)0), 'a', 12));
+	//printf("lib: %s, %p\n", " ", memset(((void *)0), 'a', 12));
+
 	printf("\nbzero: \n");
 	ft_bzero(cadena2a_set, 4);
 	printf("ft_: %s\n", cadena2a_set);
@@ -157,5 +164,12 @@ int	main(void)
 	else
 		printf("str1 is equal to str2\n");
 
+	printf("\nstrnstr: \n");
+	ptr = ft_strnstr(largestring, smallstring, 4);
+	printf("ft_: %s\n", ptr);
+	ptr1 = strnstr(largestring1, smallstring1, 4);
+	printf("lib: %s\n", ptr1);
+	
+	
 	return (1);
 }
