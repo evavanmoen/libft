@@ -1,5 +1,16 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_atoi.c                                          :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: evgutier <marvin@42.fr>                    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2024/04/28 16:13:11 by evgutier          #+#    #+#             */
+/*   Updated: 2024/04/28 16:30:14 by evgutier         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "libft.h"
-#include <stdio.h>
 
 int	ft_atoi(const char *str)
 {
@@ -10,7 +21,6 @@ int	ft_atoi(const char *str)
 	res = 0;
 	i = 0;
 	flag = 0;
-
 	if (str[i] == '-')
 	{
 		flag = 1;
@@ -26,6 +36,7 @@ int	ft_atoi(const char *str)
 	return (res);
 }
 
+/*
 int	main()
 {
 	int	val;
@@ -40,4 +51,4 @@ int	main()
 	printf("String value = %s, Int value = %d\n", str, val);
 	
 	return(0);
-}
+}*/

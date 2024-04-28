@@ -170,6 +170,9 @@ int	main(void)
 	ptr1 = strnstr(largestring1, smallstring1, 4);
 	printf("lib: %s\n", ptr1);
 	
-	
+	ptr = ft_strnstr("abcdefgh", "abc", 3);
+	printf("ft_: %s\n", ptr);
+	ptr1 = strnstr("abcdefgh", "abc", 3);
+	printf("lib: %s\n", ptr1);
 	return (1);
 }

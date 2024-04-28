@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_strtrim.c                                       :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: evgutier <marvin@42.fr>                    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2024/04/28 16:24:28 by evgutier          #+#    #+#             */
+/*   Updated: 2024/04/28 16:25:58 by evgutier         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "libft.h"
 
 size_t	char_check(char const *str, char const c)
@@ -64,23 +76,22 @@ char	*ft_strtrim(char const *s1, char const *set)
 	return (trim);
 }
 
-int     main()
+/*
+int	main()
 {
-        char str[] = " Hello, World! ";
-        char set[] = " ";
-        char *trimmed = ft_strtrim(str, set);
-        printf("1er res: %s\n", trimmed);
-
-        char str1[] = " \t\t Welcome to the Jungle \t ";
-        char set1[] = " \t";
-        char *trimmed1 = ft_strtrim(str1, set1);
-        printf("1er res: %s\n", trimmed1);
-
-        char str2[] = "NoTrimmingNeeded";
-        char set2[] = " ";
-        char *trimmed2 = ft_strtrim(str2, set2);
-        printf("1er res: %s\n", trimmed2);
-
-        return (0);
-}
-
+	char str[] = " Hello, World! ";
+	char set[] = " ";
+	char *trimmed = ft_strtrim(str, set);
+	printf("1er res: %s\n", trimmed);
+	
+	char str1[] = " \t\t Welcome to the Jungle \t ";
+	char set1[] = " \t";
+	char *trimmed1 = ft_strtrim(str1, set1);
+	printf("1er res: %s\n", trimmed1);
+	
+	char str2[] = "NoTrimmingNeeded";
+	char set2[] = " ";
+	char *trimmed2 = ft_strtrim(str2, set2);
+	printf("1er res: %s\n", trimmed2);
+	return (0);
+}*/
