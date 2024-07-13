@@ -3,52 +3,38 @@
 /*                                                        :::      ::::::::   */
 /*   ft_atoi.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: evgutier <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: evgutier <evgutier@student.42madrid.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/04/28 16:13:11 by evgutier          #+#    #+#             */
-/*   Updated: 2024/04/28 16:30:14 by evgutier         ###   ########.fr       */
+/*   Created: 2024/07/13 15:50:48 by evgutier          #+#    #+#             */
+/*   Updated: 2024/07/13 15:52:24 by evgutier         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
+int	ft_isspace(char c)
+{
+	return (c == ' ' || c == '\t' || c == '\n'
+		|| c == '\v' || c == '\f' || c == '\r');
+}
+
 int	ft_atoi(const char *str)
 {
 	int	res;
 	int	i;
-	int	flag;
+	int	sign;
 
 	res = 0;
 	i = 0;
-	flag = 0;
-	if (str[i] == '-')
+	sign = 1;
+	while (ft_isspace(str[i]))
+		i++;
+	if (str[i] == '-' || str[i] == '+')
+		sign = 1 - 2 * (str[i++] == '-');
+	while (str[i] >= 48 && str[i] <= 57)
 	{
-		flag = 1;
+		res = res * 10 + (str[i] - 48);
 		i++;
 	}
-	while (str[i] && (str[i] >= 0 && str[i] <= '9'))
-	{
-		res = res * 10 + (str[i] - '0');
-		i++;
-	}
-	if (flag)
-		res = -1 * res;
-	return (res);
+	return (res * sign);
 }
-
-/*
-int	main()
-{
-	int	val;
-	char	str[20];
-	
-	strcpy(str, "98993489");
-	val = ft_atoi(str);
-	printf("String value = %s, Int value = %d\n", str, val);
-	
-	strcpy(str, "tutorialspoint.com");
-	val = ft_atoi(str);
-	printf("String value = %s, Int value = %d\n", str, val);
-	
-	return(0);
-}*/

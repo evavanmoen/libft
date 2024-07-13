@@ -6,7 +6,7 @@
 /*   By: evgutier <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/28 16:24:28 by evgutier          #+#    #+#             */
-/*   Updated: 2024/04/28 16:25:58 by evgutier         ###   ########.fr       */
+/*   Updated: 2024/07/12 23:32:03 by evgutier         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -76,7 +76,6 @@ char	*ft_strtrim(char const *s1, char const *set)
 	return (trim);
 }
 
-/*
 int	main()
 {
 	char str[] = " Hello, World! ";
@@ -94,4 +93,4 @@ int	main()
 	char *trimmed2 = ft_strtrim(str2, set2);
 	printf("1er res: %s\n", trimmed2);
 	return (0);
-}*/
+}
