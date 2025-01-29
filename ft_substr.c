@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_substr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: evgutier <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: evgutier <evgutier@student.42madrid.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/04/28 16:26:13 by evgutier          #+#    #+#             */
-/*   Updated: 2024/04/28 16:29:34 by evgutier         ###   ########.fr       */
+/*   Created: 2024/07/19 21:16:00 by evgutier          #+#    #+#             */
+/*   Updated: 2024/09/03 07:43:44 by evgutier         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,22 +15,30 @@
 char	*ft_substr(char const *s, unsigned int start, size_t len)
 {
 	char	*res;
+	size_t	len_s;
+	size_t	init_len;
 
+	len_s = ft_strlen(s);
+	if (start >= len_s)
+		return (ft_strdup(""));
+	init_len = len_s - start;
+	if (len > init_len)
+		len = init_len;
 	res = (char *) malloc(len + 1 * sizeof(char));
 	if (!res)
 		return (NULL);
 	ft_memcpy(res, s + start, len);
+	*(res + len) = '\0';
 	return (res);
-}
+}	
 
-/*
-int	main()
+/*int	main()
 {
-	char	*str = "abcdef";
+	char	*str = "01234";
 	char	*res;
 	char	*res2;
 	
-	res = ft_substr(str, 1, 3);
+	res = ft_substr(str, 10, 10);
 	res2 = ft_substr(str, 4, 2);
 	printf("ft_: %s\n", res);
 	printf("ft_: %s\n", res2);

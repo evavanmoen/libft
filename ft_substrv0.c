@@ -1,43 +1,43 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strdup.c                                        :+:      :+:    :+:   */
+/*   ft_substr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: evgutier <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: evgutier <evgutier@student.42madrid.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/04/28 16:19:04 by evgutier          #+#    #+#             */
-/*   Updated: 2024/07/13 16:52:41 by evgutier         ###   ########.fr       */
+/*   Created: 2024/07/19 21:16:00 by evgutier          #+#    #+#             */
+/*   Updated: 2024/09/03 07:28:30 by evgutier         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strdup(const char *s1)
+char	*ft_substr(char const *s, unsigned int start, size_t len)
 {
-	size_t	len_s1;
 	char	*res;
+	size_t	len_s;
 
-	len_s1 = ft_strlen(s1);
-	res = (char *) malloc(len_s1 + 1 * sizeof(char));
+	len_s = ft_strlen(s);
+	res = (char *) malloc(len + 1 * sizeof(char));
 	if (!res)
 		return (NULL);
-	ft_memcpy(res, s1, len_s1);
-	res[len_s1] = '\0';
+	if (len_s > 0 && start < len_s)
+	{
+		ft_memcpy(res, s + start, len);
+		*(res + len) = '\0';
 	return (res);
-}
+}	
 
-/*
-int	main()
+/*int	main()
 {
-	char	*str = "Helloworld";
+	char	*str = "01234";
 	char	*res;
 	char	*res2;
-
-	res = ft_strdup(str);
-	res2 = strdup(str);
+	
+	res = ft_substr(str, 10, 10);
+	res2 = ft_substr(str, 4, 2);
 	printf("ft_: %s\n", res);
-	printf("lib: %s\n", res2);
-
+	printf("ft_: %s\n", res2);
 	free(res);
 	free(res2);
 	return (0);
