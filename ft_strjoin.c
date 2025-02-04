@@ -6,7 +6,7 @@
 /*   By: evgutier <evgutier@student.42madrid.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/03 07:47:13 by evgutier          #+#    #+#             */
-/*   Updated: 2024/09/03 08:07:08 by evgutier         ###   ########.fr       */
+/*   Updated: 2025/02/04 23:00:18 by evgutier         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ char	*ft_strjoin(char const *s1, char const *s2)
 		return (NULL);
 	ft_memmove(res, s1, len_s1);
 	ft_memmove(res + len_s1, s2, len_s2);
-	res[len_s1 + len_s2] = '\0';	
+	res[len_s1 + len_s2] = '\0';
 	return (res);
 }
 

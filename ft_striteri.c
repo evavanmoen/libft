@@ -1,40 +1,44 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_atoi.c                                          :+:      :+:    :+:   */
+/*   ft_striteri.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: evgutier <evgutier@student.42madrid.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/07/13 15:50:48 by evgutier          #+#    #+#             */
-/*   Updated: 2025/02/04 22:32:39 by evgutier         ###   ########.fr       */
+/*   Created: 2025/02/04 22:39:10 by evgutier          #+#    #+#             */
+/*   Updated: 2025/02/04 22:56:40 by evgutier         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-static int	ft_isspace(char c)
+void	ft_striteri(char *s, void (*f)(unsigned int, char*))
 {
-	return (c == ' ' || c == '\t' || c == '\n'
-		|| c == '\v' || c == '\f' || c == '\r');
-}
+	unsigned int	i;
 
-int	ft_atoi(const char *str)
-{
-	int	res;
-	int	i;
-	int	sign;
-
-	res = 0;
+	if (!s || !f)
+		return ;
 	i = 0;
-	sign = 1;
-	while (ft_isspace(str[i]))
-		i++;
-	if (str[i] == '-' || str[i] == '+')
-		sign = 1 - 2 * (str[i++] == '-');
-	while (str[i] >= 48 && str[i] <= 57)
+	while (s[i])
 	{
-		res = res * 10 + (str[i] - 48);
+		f(i, &s[i]);
 		i++;
 	}
-	return (res * sign);
 }
+
+/*void	toupper_wrapper(unsigned int index, char *c)
+{
+	(void)index;
+	*c = (char)ft_toupper((unsigned char)*c);
+}
+
+
+int	main()
+{
+	char	str[] = "hello, world!";
+
+	printf("Ori: %s\n", str);
+	ft_striteri(str, toupper_wrapper);
+	printf("Res: %s\n", str);
+	return 0;
+}*/

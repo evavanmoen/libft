@@ -6,7 +6,7 @@
 /*   By: evgutier <evgutier@student.42madrid.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/19 21:16:00 by evgutier          #+#    #+#             */
-/*   Updated: 2024/09/03 07:43:44 by evgutier         ###   ########.fr       */
+/*   Updated: 2025/02/04 22:55:58 by evgutier         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,7 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 	ft_memcpy(res, s + start, len);
 	*(res + len) = '\0';
 	return (res);
-}	
+}
 
 /*int	main()
 {

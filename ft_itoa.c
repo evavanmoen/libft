@@ -1,6 +1,18 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_itoa.c                                          :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: evgutier <evgutier@student.42madrid.com>   +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2025/01/29 18:57:46 by evgutier          #+#    #+#             */
+/*   Updated: 2025/02/04 22:54:59 by evgutier         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "libft.h"
 
-int	count_n(long n)
+static int	count_n(long n)
 {
 	int	count;	
 
@@ -9,7 +21,7 @@ int	count_n(long n)
 	count = 0;
 	while (n > 0)
 	{
-		n = n/10;
+		n = n / 10;
 		count++;
 	}
 	return (count);
@@ -18,8 +30,8 @@ int	count_n(long n)
 char	*ft_itoa(int n)
 {
 	char	*str;
-	int	flag;
-	int	len;
+	int		flag;
+	int		len;
 	long	num;
 
 	num = n;
@@ -33,7 +45,7 @@ char	*ft_itoa(int n)
 	str[len] = '\0';
 	while (len > flag)
 	{
-		str[--len]  = (num % 10) + '0';
+		str[--len] = (num % 10) + '0';
 		num /= 10;
 	}
 	if (flag)

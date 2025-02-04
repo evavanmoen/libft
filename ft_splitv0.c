@@ -6,7 +6,7 @@
 /*   By: evgutier <evgutier@student.42madrid.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/27 15:24:00 by evgutier          #+#    #+#             */
-/*   Updated: 2025/02/04 23:25:30 by evgutier         ###   ########.fr       */
+/*   Updated: 2025/02/04 23:08:49 by evgutier         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,25 +45,19 @@ static char	*new_s(const char *start, size_t len)
 	return (final_s);
 }
 
-static int	process_substring(char **res, size_t *i,
-		const char *start_s, const char *s)
+char	**ft_split(char const *s, char c)
 {
-	res[*i] = new_s(start_s, s - start_s);
-	if (!res[*i])
-	{
-		while (*i > 0)
-			free(res[--(*i)]);
-		return (0);
-	}
-	(*i)++;
-	return (1);
-}
-
-static int	fill_res(char **res, const char *s, char c)
-{
+	char		**res;
+	size_t		count;
 	size_t		i;
-	const char	*star_s;
+	const char	*start_s;
 
+	if (!s)
+		return (NULL);
+	count = count_c(s, c);
+	res = (char **) malloc((count + 1) * sizeof(char *));
+	if (!res)
+		return (NULL);
 	i = 0;
 	while (*s)
 	{
@@ -72,32 +66,19 @@ static int	fill_res(char **res, const char *s, char c)
 			start_s = s;
 			while (*s && *s != c)
 				s++;
-			if (!process_substring(res, &i, start_s, s))
-				return (0);
+			res[i++] = new_s(start_s, s - start_s);
+			if (!res[i - 1])
+			{
+				while (i-- > 0)
+					free(res[i]);
+				free(res);
+				return (NULL);
+			}
 		}
 		else
 			s++;
 	}
 	res[i] = NULL;
-	return (1);
-}
-
-char	**ft_split(char const *s, char c)
-{
-	char	**res;
-	size_t	count;
-
-	if (!s)
-		return (NULL);
-	count = count_c(s, c);
-	res = (char **) malloc((count + 1) * sizeof(char *));
-	if (!res)
-		return (NULL);
-	if (!fill_res(res, s, c))
-	{
-		free(res);
-		return (NULL);
-	}
 	return (res);
 }
 

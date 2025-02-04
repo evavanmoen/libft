@@ -6,13 +6,13 @@
 /*   By: evgutier <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/28 16:23:49 by evgutier          #+#    #+#             */
-/*   Updated: 2024/04/28 19:30:22 by evgutier         ###   ########.fr       */
+/*   Updated: 2025/02/04 22:40:33 by evgutier         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	check_strings(const char *s1, const char *s2, size_t n)
+static int	check_strings(const char *s1, const char *s2, size_t n)
 {
 	size_t	i;
 

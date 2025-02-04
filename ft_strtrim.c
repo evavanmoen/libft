@@ -6,13 +6,13 @@
 /*   By: evgutier <evgutier@student.42madrid.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/03 08:09:23 by evgutier          #+#    #+#             */
-/*   Updated: 2024/09/03 08:11:56 by evgutier         ###   ########.fr       */
+/*   Updated: 2025/02/04 22:40:59 by evgutier         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-size_t	char_check(char const *str, char const c)
+static size_t	char_check(char const *str, char const c)
 {
 	size_t	i;
 
@@ -28,7 +28,7 @@ size_t	char_check(char const *str, char const c)
 	return (0);
 }
 
-char	*str_new(size_t n)
+static char	*str_new(size_t n)
 {
 	char	*str;
 
