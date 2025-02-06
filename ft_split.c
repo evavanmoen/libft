@@ -6,7 +6,7 @@
 /*   By: evgutier <evgutier@student.42madrid.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/27 15:24:00 by evgutier          #+#    #+#             */
-/*   Updated: 2025/02/04 23:25:30 by evgutier         ###   ########.fr       */
+/*   Updated: 2025/02/06 19:02:22 by evgutier         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,7 +62,7 @@ static int	process_substring(char **res, size_t *i,
 static int	fill_res(char **res, const char *s, char c)
 {
 	size_t		i;
-	const char	*star_s;
+	const char	*start_s;
 
 	i = 0;
 	while (*s)
