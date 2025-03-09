@@ -13,4 +13,20 @@
  
  Diffs:
  
+-------------------------------
+void    test_bzero(void)
+{
+        char    cadena2a_set[] = "almost every programmer should know memset!";
+        char    cadena2b_set[] = "almost every programmer should know memset!";
+
+        printf("\nbzero: \n");
+        ft_bzero(cadena2a_set, 4);
+        printf("ft_: %s\n", cadena2a_set);
+        bzero(cadena2b_set, 4);
+        printf("lib: %s\n", cadena2b_set);
+}
+
+bzero: 
+ft_: 
+lib: 
 

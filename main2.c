@@ -67,9 +67,11 @@ void	test_isascii(void)
 		printf("lib: %c, %d\n", cadena[i], isascii(cadena[i]));
 		i++;
 	}
+	printf("ft_: %d\n", ft_isascii(-128));
+	printf("lib: %d\n", isascii(-128));
 }
 
-// Función para probar ft_isprint
+// Función para probar ft_isprint (fuera del rango 32,126 son no printables + tab +  \0 + caracts control(tab vertical,  salto pagina, ....)
 void	test_isprint(void)
 {
 	char	cadena[] = ";0sR(h&R1/";
@@ -103,11 +105,11 @@ void	test_strlen(void)
 void	test_memset(void)
 {
 	char	cadena2a_set[] = "almost every programmer should know memset!";
-	char	cadena2b_set[] = "almost every programmer should know memset!";
+	//char	cadena2b_set[] = "almost every programmer should know memset!";
 
 	printf("\nmemset: \n");
 	printf("ft_: %s, %p\n", cadena2a_set, ft_memset(cadena2a_set, '-', 6));
-	printf("lib: %s, %p\n", cadena2b_set, memset(cadena2b_set, '-', 6));
+	printf("lib: %s, %p\n", cadena2a_set, memset(cadena2a_set, '-', 6));
 }
 
 // Función para probar ft_bzero
@@ -152,22 +154,22 @@ void	test_strlcpy(void)
 {
 	char	strlcpy1a[20] = "Hello";
 	char	strlcpy1b[20];
-	char	strlcpy1c[20];
+	//char	strlcpy1c[20];
 
 	printf("\nstrlcpy: \n");
 	printf("ft_: %s, %zu\n", strlcpy1b, ft_strlcpy(strlcpy1b, strlcpy1a, 11));
-	printf("lib: %s, %lu\n", strlcpy1c, strlcpy(strlcpy1c, strlcpy1a, 11));
+	//printf("lib: %s, %lu\n", strlcpy1c, strlcpy(strlcpy1c, strlcpy1a, 11));
 }
 
 // Función para probar ft_strlcat
 void	test_strlcat(void)
 {
 	char	dst1a[5] = "";
-	char	dst1b[5] = "";
+	//char	dst1b[5] = "";
 
 	printf("\nstrlcat: \n");
 	printf("ft_: %s, %zu\n", dst1a, ft_strlcat(dst1a, "123", 0));
-	printf("lib: %s, %zu\n", dst1b, strlcat(dst1b, "123", 0));
+	//printf("lib: %s, %zu\n", dst1b, strlcat(dst1b, "123", 0));
 }
 
 // Función para probar ft_toupper y ft_tolower
